@@ -1,5 +1,8 @@
 package com.hackathon.healthtracker.model;
 
+import java.util.List;
+
+
 public class patient {
 
 	private long id;
@@ -9,7 +12,14 @@ public class patient {
 	private String guardianLastName;
 	private String username;
 	private String password;
+	private List<Case> cases;
 	
+	public List<Case> getCases() {
+		return cases;
+	}
+	public void setCases(List<Case> cases) {
+		this.cases = cases;
+	}
 	public long getId() {
 		return id;
 	}
