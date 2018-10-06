@@ -14,6 +14,8 @@ import com.hackathon.healthtracker.model.patient;
 
 public class DummyData {
 	
+	int timesInThis = 0;
+	
 	public List<patient> dummyGetPatientsByDoctorId(int id) {
 		
 		List<patient> patients = new ArrayList<patient>();
@@ -29,27 +31,27 @@ public class DummyData {
 		dummyPatient.setCases(this.dummyGetCasesByPatientId(1));
 		patients.add(dummyPatient);
 		
-		dummyPatient = new patient();
-		dummyPatient.setId(2);
-		dummyPatient.setFirstName("Sarah");
-		dummyPatient.setLastName("Houston");
-		dummyPatient.setGuardianFirstName("Rich");
-		dummyPatient.setGuardianLastName("Houston");
-		dummyPatient.setUsername("sarahABC");
-		dummyPatient.setPassword("sarahABC");
-		dummyPatient.setCases(this.dummyGetCasesByPatientId(2));
-		patients.add(dummyPatient);
+		patient dummyPatient2 = new patient();
+		dummyPatient2.setId(2);
+		dummyPatient2.setFirstName("Sarah");
+		dummyPatient2.setLastName("Houston");
+		dummyPatient2.setGuardianFirstName("Rich");
+		dummyPatient2.setGuardianLastName("Houston");
+		dummyPatient2.setUsername("sarahABC");
+		dummyPatient2.setPassword("sarahABC");
+		dummyPatient2.setCases(this.dummyGetCasesByPatientId(2));
+		patients.add(dummyPatient2);
 		
-		dummyPatient = new patient();
-		dummyPatient.setId(3);
-		dummyPatient.setFirstName("Lenny");
-		dummyPatient.setLastName("Southerland");
-		dummyPatient.setGuardianFirstName("Betsy");
-		dummyPatient.setGuardianLastName("Southerland");
-		dummyPatient.setUsername("lenny101");
-		dummyPatient.setPassword("lenny101");
-		dummyPatient.setCases(this.dummyGetCasesByPatientId(7));
-		patients.add(dummyPatient);
+		patient dummyPatient3 = new patient();
+		dummyPatient3.setId(3);
+		dummyPatient3.setFirstName("Lenny");
+		dummyPatient3.setLastName("Southerland");
+		dummyPatient3.setGuardianFirstName("Betsy");
+		dummyPatient3.setGuardianLastName("Southerland");
+		dummyPatient3.setUsername("lenny101");
+		dummyPatient3.setPassword("lenny101");
+		dummyPatient3.setCases(this.dummyGetCasesByPatientId(3));
+		patients.add(dummyPatient3);
 
 		return patients;
 		
@@ -57,6 +59,8 @@ public class DummyData {
 
 	public List<Case> dummyGetCasesByPatientId(int id) {
 		List<Case> cases = new ArrayList<Case>();
+		
+		timesInThis++;
 		
 		Case dummyCase = new Case();
 		dummyCase.setCaseId(1);
@@ -66,8 +70,10 @@ public class DummyData {
 		dummyCase.setPatientId(1);
 		dummyCase.setInterval(1);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (1 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 1");
 		}
 		
 		dummyCase = new Case();
@@ -79,8 +85,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (2 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 2");
 		}
 		
 		dummyCase = new Case();
@@ -92,8 +100,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (3 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 3");
 		}
 		
 		dummyCase = new Case();
@@ -105,8 +115,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (3 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 3");
 		}
 		
 		dummyCase = new Case();
@@ -118,8 +130,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (2 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 2");
 		}
 		
 		dummyCase = new Case();
@@ -131,8 +145,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (1 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 1");
 		}
 		
 		dummyCase = new Case();
@@ -144,8 +160,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (2 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 2");
 		}
 		
 		dummyCase = new Case();
@@ -157,8 +175,10 @@ public class DummyData {
 		dummyCase.setInterval(1);
 		cases.add(dummyCase);
 		
-		if (dummyCase.getPatientId() == id) {
+		if (3 == id) {
 			cases.add(dummyCase);
+			System.out.println("just added the case. Times in this: " + timesInThis);
+			System.out.println("id is " + id + "trying to match 3");
 		}
 		
 		return cases;	

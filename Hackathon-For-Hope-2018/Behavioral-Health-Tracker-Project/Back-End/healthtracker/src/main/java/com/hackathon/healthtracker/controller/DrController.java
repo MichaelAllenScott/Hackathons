@@ -1,6 +1,7 @@
 package com.hackathon.healthtracker.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -45,9 +46,106 @@ public class DrController {
 //        drsPatients.add(new patient());
 //        drsPatients.add(new patient());
         
-        List<patient> drsPatients = dummy.dummyGetPatientsByDoctorId(1);
+        //List<patient> drsPatients = dummy.dummyGetPatientsByDoctorId(1);
         
-        
+        patient dummyPatient = new patient();
+        dummyPatient.setId(1);
+		dummyPatient.setFirstName("Steve");
+		dummyPatient.setLastName("Harris");
+		dummyPatient.setGuardianFirstName("Rick");
+		dummyPatient.setGuardianLastName("Harris");
+		dummyPatient.setUsername("steve123");
+		dummyPatient.setPassword("steve123");
+        Case dummyCase = new Case();
+		dummyCase.setCaseId(1);
+		dummyCase.setDoctorId(1);
+		dummyCase.setStartDate(new Date(2017, 04, 01));
+		dummyCase.setEndDate(new Date(2017, 06, 12));
+		dummyCase.setPatientId(1);
+		dummyCase.setInterval(1);
+		Case dummyCase2 = new Case();
+		dummyCase2 = new Case();
+		dummyCase2.setCaseId(6);
+		dummyCase2.setDoctorId(1);
+		dummyCase2.setStartDate(new Date(2018, 06, 11));
+		dummyCase2.setEndDate(new Date(2020, 10, 12));
+		dummyCase2.setPatientId(1);
+		dummyCase2.setInterval(1);
+		List<Case> casesPatient1 = new ArrayList<Case>();
+		//casesPatient1.add(dummyCase);
+		//casesPatient1.add(dummyCase2);
+		//dummyPatient.setCases(casesPatient1);
+		
+		
+		
+		patient dummyPatient2 = new patient();
+		dummyPatient2.setId(2);
+		dummyPatient2.setFirstName("Sarah");
+		dummyPatient2.setLastName("Houston");
+		dummyPatient2.setGuardianFirstName("Rich");
+		dummyPatient2.setGuardianLastName("Houston");
+		dummyPatient2.setUsername("sarahABC");
+		dummyPatient2.setPassword("sarahABC");
+		Case dummyCase3 = new Case();
+		dummyCase3 = new Case();
+		dummyCase3.setCaseId(2);
+		dummyCase3.setDoctorId(1);
+		dummyCase3.setStartDate(new Date(2017, 10, 15));
+		dummyCase3.setEndDate(new Date(2019, 11, 23));
+		dummyCase3.setPatientId(2);
+		dummyCase3.setInterval(1);
+		Case dummyCase4 = new Case();
+		dummyCase4 = new Case();
+		dummyCase4.setCaseId(5);
+		dummyCase4.setDoctorId(1);
+		dummyCase4.setStartDate(new Date(2018, 01, 25));
+		dummyCase4.setEndDate(new Date(2018, 03, 07));
+		dummyCase4.setPatientId(2);
+		dummyCase4.setInterval(1);
+		
+		patient dummyPatient3 = new patient();
+		dummyPatient3.setId(3);
+		dummyPatient3.setFirstName("Lenny");
+		dummyPatient3.setLastName("Southerland");
+		dummyPatient3.setGuardianFirstName("Betsy");
+		dummyPatient3.setGuardianLastName("Southerland");
+		dummyPatient3.setUsername("lenny101");
+		dummyPatient3.setPassword("lenny101");
+		Case dummyCase5 = new Case();
+		dummyCase5 = new Case();
+		dummyCase5.setCaseId(3);
+		dummyCase5.setDoctorId(1);
+		dummyCase5.setStartDate(new Date(2017, 11, 01));
+		dummyCase5.setEndDate(new Date(2018, 02, 23));
+		dummyCase5.setPatientId(3);
+		dummyCase5.setInterval(1);
+		Case dummyCase6 = new Case();
+		dummyCase6 = new Case();
+		dummyCase6.setCaseId(4);
+		dummyCase6.setDoctorId(1);
+		dummyCase6.setStartDate(new Date(2017, 12, 19));
+		dummyCase6.setEndDate(new Date(2019, 01, 11));
+		dummyCase6.setPatientId(3);
+		dummyCase6.setInterval(1);
+		
+		
+		List<Case> casesPatient2 = new ArrayList<Case>();
+		List<Case> casesPatient3 = new ArrayList<Case>();
+		casesPatient1.add(dummyCase);
+		casesPatient1.add(dummyCase2);
+		casesPatient2.add(dummyCase3);
+		casesPatient2.add(dummyCase4);
+		casesPatient3.add(dummyCase5);
+		casesPatient3.add(dummyCase6);
+		dummyPatient.setCases(casesPatient1);
+		dummyPatient2.setCases(casesPatient2);
+		dummyPatient3.setCases(casesPatient3);
+		
+		List<patient> drsPatients = new ArrayList<patient>();
+		drsPatients.add(dummyPatient);
+		drsPatients.add(dummyPatient2);
+		drsPatients.add(dummyPatient3);
+		
         return drsPatients;
     }
 	

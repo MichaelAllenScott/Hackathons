@@ -11,6 +11,19 @@ public class Case {
 	public Date endDate;
 	public int interval;
 	
+	public Case() {
+		
+	}
+	
+	public Case(long caseId, long doctorId, long patientId, Date startDate, Date endDate, int interval) {
+		super();
+		this.caseId = caseId;
+		this.doctorId = doctorId;
+		this.patientId = patientId;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.interval = interval;
+	}
 	public long getCaseId() {
 		return caseId;
 	}
