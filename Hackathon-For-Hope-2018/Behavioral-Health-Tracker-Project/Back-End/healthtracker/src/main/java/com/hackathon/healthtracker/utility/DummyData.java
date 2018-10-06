@@ -260,7 +260,7 @@ public class DummyData {
 	}
 	
 	public List<Case> getDummyActiveCases() {
-		Date currentDate = new Date;
+		
 		List<Case> cases = new ArrayList<Case>();
 		
 		Case dummyCase = new Case();
