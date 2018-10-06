@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="navbar">
+    <div class="row">
+        <span class="logo"><i class="fas fa-brain"></i></span>
+        <h2 class="logo-name">trkr.</h2>
+    </div>
+    <div>
+      <a class="btn btn-link custom-nav-button">
+        <span class="nav-logo">
+          <i *ngIf="userType == 'doctor'" class="fas fa-user-md"></i>
+          <i *ngIf="userType == 'patient'" class="fas fa-user"></i>
+        </span>
+        <span class="custom-nav-link">{{ userName }}</span>
+      </a>
+      <a class="btn btn-link custom-nav-button" (click)="logout()">
+        <span class="nav-logo"><i class="fas fa-sign-out-alt"></i></span>
+        <span class="custom-nav-link">Logout</span>
+      </a>
+    </div>
+  </div>
+</div>
