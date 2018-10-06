@@ -14,50 +14,20 @@ export class PatientPortalComponent implements OnInit {
     dayNumber: '6',
     Tasks: [
       {
-        description: 'How has the Medication Treated you?',
+        description: 'How were you feeling today on a scale of 1 - 10?',
         rating: 5,
         comment: null
       },
       {
-        description: 'How has the Medication Treated you?',
+        description: 'How well did you sleep on a scale of 1- 10',
         rating: 5,
         comment: null
       },
       {
-        description: 'How has the Medication Treated you?',
+        description: 'Did you notice any side effect after you took your medication? If so, how bad?',
         rating: 5,
         comment: null
       },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      },
-      {
-        description: 'How has the Medication Treated you?',
-        rating: 5,
-        comment: null
-      }
     ]
   };
 

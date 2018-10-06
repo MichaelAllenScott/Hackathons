@@ -35,7 +35,7 @@
                 <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.caseId}}</div>
                 <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.startDate | date}}</div>
                 <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.endDate | date}}</div>
-                <div class="col-sm-3" style="text-align: center; color: rgb(61, 127, 150) !important"><a href="#"><i class="far fa-map"></i> Explore Case</a></div>
+                <div class="col-sm-3" style="text-align: center; color: rgb(61, 127, 150) !important" ><a (click)="goToCase()"><i class="far fa-map"></i> Explore Case</a></div>
               </div>
             </div>
           </div>

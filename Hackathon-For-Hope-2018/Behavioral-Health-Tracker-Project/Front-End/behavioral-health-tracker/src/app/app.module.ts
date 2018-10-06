@@ -14,6 +14,7 @@ import { DoctorPortalComponent } from './router-components/dashboard/doctor-port
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserService } from './services/user.service';
 import { ApiGeneral } from './services/api-general.service';
+import { CaseReviewComponent } from './router-components/dashboard/doctor-portal/case-review/case-review.component';
 
 
 
@@ -24,7 +25,8 @@ import { ApiGeneral } from './services/api-general.service';
     NavbarComponent,
     PatientPortalComponent,
     DoctorPortalComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CaseReviewComponent
   ],
   imports: [
     BrowserModule,

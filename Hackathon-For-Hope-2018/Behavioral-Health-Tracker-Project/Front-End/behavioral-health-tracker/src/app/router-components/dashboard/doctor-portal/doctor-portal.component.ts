@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { ApiGeneral } from '../../../services/api-general.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-portal',
@@ -13,7 +14,7 @@ export class DoctorPortalComponent implements OnInit {
   userName = '';
   userType = '';
 
-  constructor(private userService: UserService, private apiService: ApiGeneral) { }
+  constructor(private userService: UserService, private apiService: ApiGeneral, private router: Router) { }
 
   ngOnInit() {
     this.userName = this.userService.getUserName();
@@ -25,6 +26,10 @@ export class DoctorPortalComponent implements OnInit {
         console.log(this.patients);
       }
     });
+  }
+
+  goToCase() {
+    this.router.navigate(['/case1']);
   }
 
 }
