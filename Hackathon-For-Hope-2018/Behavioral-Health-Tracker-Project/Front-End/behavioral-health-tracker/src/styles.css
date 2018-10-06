@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #5B616A
+}
+
+.btn-primary {
+    color: #FCF7F8;
+    background-color: #275DAD;
+    border-color: #275DAD;
+}
