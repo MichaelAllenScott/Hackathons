@@ -453,7 +453,14 @@ public class DummyData {
 		int randomNum = rand.nextInt((maxRating - minRating) + 1) + minRating;
 		
 		Rating dummyRating = new Rating();
-		dummyRating.setGaurdianComment("We're working hard to be diligent. Sometimes we're too busy.");
+		
+		Random newRand = new Random();
+		int newRandomNumber = newRand.nextInt((10 - 2) + 1) + 2;
+		
+		String exampleComment = "User comment, example #" + newRandomNumber;
+		
+		//dummyRating.setGaurdianComment("We're working hard to be diligent. Sometimes we're too busy.");
+		dummyRating.setGaurdianComment(exampleComment);
 		dummyRating.setGaurdianRating(randomNum);
 		
 		rand = new Random();
@@ -468,7 +475,7 @@ public class DummyData {
 	}
 	
 	
-	public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+	public long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
 	    long diffInMillies = date2.getTime() - date1.getTime();
 	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
 	}

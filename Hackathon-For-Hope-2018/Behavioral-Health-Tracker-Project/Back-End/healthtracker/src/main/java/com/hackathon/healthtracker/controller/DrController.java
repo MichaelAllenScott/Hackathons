@@ -3,6 +3,7 @@ package com.hackathon.healthtracker.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.hackathon.healthtracker.model.Case;
 import com.hackathon.healthtracker.model.DayOverview;
 import com.hackathon.healthtracker.model.Greeting;
+import com.hackathon.healthtracker.model.HistoricAllTaskInfo;
+import com.hackathon.healthtracker.model.HistoricTaskInfo;
 import com.hackathon.healthtracker.model.Rating;
 import com.hackathon.healthtracker.model.Task;
 import com.hackathon.healthtracker.model.patient;
@@ -183,6 +186,13 @@ public class DrController {
         return dummy.dummyGetTasks();
     }
 	
+	@GetMapping("/case")
+	@ResponseBody
+	public Case returnRatingsByDayAndCase(@RequestParam String caseId) {
+        
+        return dummy.dummyGetCasesByCaseId(Integer.parseInt(caseId));
+    }
+	
 	@GetMapping("/ratings")
 	@ResponseBody
 	public List<Rating> returnRatingsByDayAndCase(@RequestParam String caseId, @RequestParam String caseDay) {
@@ -212,6 +222,71 @@ public class DrController {
         //STILL NEED TO FILTER INACTIVE CASES
         return dummy.getDummyActiveCases();
     }
+	
+	/*
+	@GetMapping("/ratingHistory")
+	@ResponseBody
+	public List<HistoricTaskInfo> returnRatingHistory(@RequestParam String caseId) {
+        
+		int id = Integer.parseInt(caseId);
+		
+		//Get a case by its ID
+		Case currentCase = dummy.dummyGetCasesByCaseId(id);
+		Date beginDate = currentCase.getStartDate();
+		Date endDate = currentCase.getEndDate();
+		
+		//Number of days passed for some case:
+		long elapsedDays = dummy.getDateDiff(beginDate, endDate, TimeUnit.DAYS);
+		
+		List<HistoricTaskInfo> allTasks = new ArrayList<HistoricTaskInfo>();
+		HistoricAllTaskInfo historicTaskInfoList = new HistoricAllTaskInfo();
+		historicTaskInfoList = new HistoricAllTaskInfo();
+		List<HistoricTaskInfo> theList = historicTaskInfoList.getHistoricTaskInfoList();
+		for (int i = 1; i < (int) elapsedDays; i ++) {
+			Task currentTask = dummy.dummyGetTasks().get(0);
+			HistoricTaskInfo currentTaskInfo = new HistoricTaskInfo();
+			
+			currentTaskInfo.setElapsedDays(i);
+			currentTaskInfo.setGuardianRating(currentTask.getGaurdianRating());
+			currentTaskInfo.setPatientRating(currentTask.getPatientRating());
+			currentTaskInfo.setComment(currentTask.getComment());
+			
+			allTasks.add(currentTaskInfo);
+			
+			theList.add((HistoricTaskInfo) allTasks);
+			
+			
+			
+			currentTask = dummy.dummyGetTasks().get(1);
+			currentTaskInfo = new HistoricTaskInfo();
+			historicTaskInfoList = new HistoricAllTaskInfo();
+			currentTaskInfo.setElapsedDays(i);
+			currentTaskInfo.setGuardianRating(currentTask.getGaurdianRating());
+			currentTaskInfo.setPatientRating(currentTask.getPatientRating());
+			currentTaskInfo.setComment(currentTask.getComment());
+			
+			allTasks = new ArrayList<HistoricTaskInfo>();
+			allTasks.add(currentTaskInfo);
+			theList.add((HistoricTaskInfo) allTasks);
+			
+			
+			
+			currentTask = dummy.dummyGetTasks().get(2);
+			currentTaskInfo = new HistoricTaskInfo();
+			historicTaskInfoList = new HistoricAllTaskInfo();
+			currentTaskInfo.setElapsedDays(i);
+			currentTaskInfo.setGuardianRating(currentTask.getGaurdianRating());
+			currentTaskInfo.setPatientRating(currentTask.getPatientRating());
+			currentTaskInfo.setComment(currentTask.getComment());
+			
+			allTasks = new ArrayList<HistoricTaskInfo>();
+			allTasks.add(currentTaskInfo);
+			theList.add allTasks);
+		}
+        
+		return theList;
+    }
+	*/
 	
 	//LOOK UP HOW TO HANDLE POST REQUEST
 	/*
