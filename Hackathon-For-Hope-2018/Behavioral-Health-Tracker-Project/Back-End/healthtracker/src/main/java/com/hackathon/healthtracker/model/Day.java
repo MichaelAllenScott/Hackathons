@@ -1,5 +1,7 @@
 package com.hackathon.healthtracker.model;
 
+import java.util.List;
+
 public class Day {
 
 	//TODO!!!

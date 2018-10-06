@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './router-components/dashboard/dashboard.component';
@@ -11,6 +13,7 @@ import { PatientPortalComponent } from './router-components/dashboard/patient-po
 import { DoctorPortalComponent } from './router-components/dashboard/doctor-portal/doctor-portal.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserService } from './services/user.service';
+import { ApiGeneral } from './services/api-general.service';
 
 
 
@@ -25,11 +28,14 @@ import { UserService } from './services/user.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: false }),
   ],
   providers: [
-    UserService
+    UserService,
+    ApiGeneral
   ],
   bootstrap: [AppComponent]
 })

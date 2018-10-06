@@ -1,27 +1,46 @@
-<div class="container">
+<div class="container" style="margin-top: -2px; border-radius: 0;">
+  <div class="card header-card">
+    <h2 class="text-center">{{userName}}'s Patients</h2>
+  </div>
   <div class="card doctor-portal-container">
-    <div class="header-text">Patients:</div>
-    <ngb-accordion [closeOthers]="true" #acc="ngbAccordion" class="accordion-container" activeIds="ngb-panel-0">
-      <ngb-panel *ngFor="let patient of patients">
-        <ng-template ngbPanelTitle >
-          {{ patient.firstName + " " +  patient.lastName }} (Guardian: {{ patient.GuardianFirstName + " " + patient.GuardianLastName }}) 
-        </ng-template>
-        <span *ngFor="let case of patient.Cases" >
-          <ng-template ngbPanelContent>
-            <div class="row">
-              <div class="col-sm">
-                <span class="inner-detail-text">{{case.name}}</span>
+    <div *ngFor="let patient of patients" class="card" style="margin-bottom: 15px;">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-2">
+            <i style="font-size: 70pt; color: #275DAD; margin-left: 35px;" class="fas fa-user-circle"></i>
+            <span style="display: block; margin-left: 38px;"><strong style="font-family: 'Niramit', sans-serif;">{{patient.firstName + " " + patient.lastName}}</strong></span>
+          </div>
+          <div class="col-sm-3">
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-sm" style="font-family: 'Niramit', sans-serif;"><Strong>Patient Username: </Strong>{{patient.username}}</div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-sm" style="font-family: 'Niramit', sans-serif;"><Strong>Patient Id: </Strong> {{patient.id}}</div>
+            </div>
+            <div class="row" style="margin-top: 15px;">
+              <div class="col-sm" style="font-family: 'Niramit', sans-serif;"><Strong>Guardian: </Strong> {{patient.guardianFirstName + " " + patient.guardianLastName}}</div>
+            </div>
+          </div>
+          <div class="col-sm-7" style="margin-top: 10px">
+            <strong style="font-family: 'Niramit', sans-serif;">Treatments:</strong>
+            <div class="card">
+              <div class="row" style="margin-top: 5px; margin-bottom: 5px;">
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center"><Strong>Case Id:</Strong></div>
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center"><Strong>Start Date:</Strong></div>
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center"><Strong>End Date:</Strong></div>
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center"><Strong>Go To:</Strong></div>
               </div>
-              <div class="col-sm">
-                <span class="inner-detail-text">Treatment Starts:</span> {{case.startDate}}
-              </div>
-              <div class="col-sm">
-                <span class="inner-detail-text">Treatment Ends:</span> {{case.endDate}}
+              <hr style="margin: 0;">
+              <div class="row" *ngFor="let case of patient.cases" style="margin-top: 5px; margin-bottom: 5px;">
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.caseId}}</div>
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.startDate | date}}</div>
+                <div class="col-sm-3" style="font-family: 'Niramit', sans-serif; text-align: center">{{case.endDate | date}}</div>
+                <div class="col-sm-3" style="text-align: center; color: rgb(61, 127, 150) !important"><a href="#"><i class="far fa-map"></i> Explore Case</a></div>
               </div>
             </div>
-          </ng-template>
-        </span>
-      </ngb-panel>
-    </ngb-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

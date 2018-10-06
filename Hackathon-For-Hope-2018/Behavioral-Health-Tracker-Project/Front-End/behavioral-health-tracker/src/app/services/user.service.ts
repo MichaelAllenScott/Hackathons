@@ -3,9 +3,10 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class UserService {
-    private userName = 'Michael Scott';
-    private userType = 'doctor';
-    private userLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+    private userName = '';
+    private userType = '';
+    private userLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+    private userId: string;
 
     constructor () { }
 
@@ -21,12 +22,20 @@ export class UserService {
         this.userLoggedIn$.next(userLoggedIn);
     }
 
+    setUserId(userId: string) {
+        this.userId = userId;
+    }
+
     getUserType(): string {
         return this.userType;
     }
 
     getUserName(): string {
         return this.userName;
+    }
+
+    getUserId(): string {
+        return this.userId;
     }
 
     getUserLoggedIn$(): BehaviorSubject<boolean> {

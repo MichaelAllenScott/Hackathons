@@ -1,13 +1,14 @@
 <div class="text-center container">
-  <form class="form-signin">
+  <div class="form-signin">
     <span class="logo"><i class="fas fa-brain"></i></span>
     <h2 class="logo-name">trkr.</h2>
     <br>
+    <div *ngIf="showErrorMessage" class="alert alert-danger" role="alert">Invalid Entry</div>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input [(ngModel)]="userName" type="email" id="inputEmail" class="form-control" placeholder="Email address" required >
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input [(ngModel)]="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
     <br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  </form>
+    <button class="btn btn-lg btn-primary btn-block" (click)="signIn()" >Sign in</button>
+  </div>
 </div>
