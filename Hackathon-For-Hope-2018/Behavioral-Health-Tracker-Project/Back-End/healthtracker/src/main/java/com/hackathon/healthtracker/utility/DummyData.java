@@ -48,7 +48,7 @@ public class DummyData {
 		dummyPatient.setGuardianLastName("Southerland");
 		dummyPatient.setUsername("lenny101");
 		dummyPatient.setPassword("lenny101");
-		dummyPatient.setCases(this.dummyGetCasesByPatientId(3));
+		dummyPatient.setCases(this.dummyGetCasesByPatientId(7));
 		patients.add(dummyPatient);
 
 		return patients;
@@ -385,19 +385,20 @@ public class DummyData {
 		rand = new Random();
 		
 		randomNum = rand.nextInt((maxRating - minRating) + 1) + minRating;
-		dummyOverview.setPatientAverageRating(randomNum);
+		dummyOverview.setPatientAverageRating(this.randomNumber());
 		dummyOverview.setDaySinceBeginning(getDateDiff(beginDate, endDate, TimeUnit.DAYS));
 		return dummyOverview;
 		
 	}
 	
-//	private int randomNumber() {
-//		int maxRating = 10;
-//		int minRating = 1;
-//		int randomNum = rand.nextInt((maxRating - minRating) + 1) + minRating;
-//		
-//		return randomNum;
-//	}
+	private int randomNumber() {
+		Random rand = new Random();
+		int maxRating = 10;
+		int minRating = 1;
+		int randomNum = rand.nextInt((maxRating - minRating) + 1) + minRating;
+		
+		return randomNum;
+	}
 	
 	public List<Task> dummyGetTasks() {
 		List<Task> tasks = new ArrayList<Task>();
@@ -434,6 +435,8 @@ public class DummyData {
 		Rating dummyRating = new Rating();
 		dummyRating.setGaurdianComment("We're working hard to be diligent. Sometimes we're too busy.");
 		dummyRating.setGaurdianRating(randomNum);
+		
+		rand = new Random();
 		
 		randomNum = rand.nextInt((maxRating - minRating) + 1) + minRating;
 		dummyRating.setPatientRating(randomNum);

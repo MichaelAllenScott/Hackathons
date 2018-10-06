@@ -77,9 +77,10 @@ public class DrController {
 		
 		//List<Task> days = dao.getDaysByCaseId(id)
         
-        List<Task> tasks = new ArrayList<Task>();
-        tasks.add(new Task());
-        tasks.add(new Task());
+//        List<Task> tasks = new ArrayList<Task>();
+//        tasks.add(new Task());
+//        tasks.add(new Task());
+//        
         
         return dummy.dummyGetTasks();
     }
