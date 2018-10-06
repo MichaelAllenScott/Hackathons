@@ -1,2 +1,27 @@
 <div class="container">
+  <div class="card doctor-portal-container">
+    <div class="header-text">Patients:</div>
+    <ngb-accordion [closeOthers]="true" #acc="ngbAccordion" class="accordion-container" activeIds="ngb-panel-0">
+      <ngb-panel *ngFor="let patient of patients">
+        <ng-template ngbPanelTitle >
+          {{ patient.firstName + " " +  patient.lastName }} (Guardian: {{ patient.GuardianFirstName + " " + patient.GuardianLastName }}) 
+        </ng-template>
+        <span *ngFor="let case of patient.Cases" >
+          <ng-template ngbPanelContent>
+            <div class="row">
+              <div class="col-sm">
+                <span class="inner-detail-text">{{case.name}}</span>
+              </div>
+              <div class="col-sm">
+                <span class="inner-detail-text">Treatment Starts:</span> {{case.startDate}}
+              </div>
+              <div class="col-sm">
+                <span class="inner-detail-text">Treatment Ends:</span> {{case.endDate}}
+              </div>
+            </div>
+          </ng-template>
+        </span>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
 </div>

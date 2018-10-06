@@ -14,7 +14,7 @@ import com.hackathon.healthtracker.model.DayOverview;
 import com.hackathon.healthtracker.model.Rating;
 import com.hackathon.healthtracker.model.Task;
 import com.hackathon.healthtracker.model.patient;
-import com.hackathon.healthtracker.model.task;
+import com.hackathon.healthtracker.model.Task;
 
 @Controller
 public class DrController {

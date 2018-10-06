@@ -1,3 +1,40 @@
-<p>
-  patient-portal works!
-</p>
+<div class="container" style="margin-top: -2px; border-radius: 0;">
+  <div class="card header-card">
+    <h2 class="text-center">{{ caseInstance.caseName + ": Day " + caseInstance.dayNumber }}</h2>
+  </div>
+  <div class="card questions-container">
+    <div class="container" style="padding: 20px 20px 20px 20px">
+        <div class="alert alert-light" style="text-align: center; font-family: 'Niramit', sans-serif;" role="alert">
+            Please answer as many items as you can.
+          </div>
+      <span *ngFor="let task of caseInstance.Tasks; let i = index">
+        <div class="card" style="margin-bottom: 10px;">
+          <div class="card-body">
+            <span style="margin: 25px 40px 15px 0px" class="question-text">{{ task.description }}</span>
+            <br>
+            <br>
+            <div>
+              <span *ngFor="let rating of ratings">
+                <span class="numberCircle" [class.activeNumberCircle]="rating === activeCircleNumbers[i]" (click)="selectCircle(i, rating)">{{rating}}</span>
+              </span>
+            </div>
+            <br>
+            <div>
+              <button *ngIf="commentArray[i] && !commentArray[i].open" style="font-family: 'Niramit', sans-serif; color: #275DAD;" class="btn btn-light" (click)="openComment(i)"><i class="fas fa-comment"></i> Add Comment</button>
+              <br>
+              <div *ngIf="commentArray[i] && commentArray[i].open">
+                <span style="font-weight: 700; font-family: 'Niramit', sans-serif;">Comment:</span>
+                <div class="form-group">
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+      <br>
+      <button style="font-family: 'Niramit', sans-serif; font-size: 14pt;" class="btn btn-primary btn-block"> Save</button>
+    </div>
+  </div>
+</div>
+

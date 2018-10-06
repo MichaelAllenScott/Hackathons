@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './router-components/dashboard/dashboard.component';
@@ -10,6 +11,7 @@ import { PatientPortalComponent } from './router-components/dashboard/patient-po
 import { DoctorPortalComponent } from './router-components/dashboard/doctor-portal/doctor-portal.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { UserService } from './services/user.service';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { UserService } from './services/user.service';
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(routes, { useHash: false }),
   ],
   providers: [
